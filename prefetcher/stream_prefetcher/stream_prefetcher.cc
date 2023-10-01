@@ -5,11 +5,10 @@
 #include "cache.h"
 
 constexpr int PREFETCH_DEGREE = 3;
-constexpr int PREFETCH_DISTANCE = 20;
+constexpr int PREFETCH_DISTANCE = 4;
 const int INITIAL = 0;
 const int ALLOCATED = 1;
 const int TRAINING = 2;
-
 
 struct tracker_entry {
 
@@ -34,43 +33,44 @@ void CACHE::prefetcher_initialize() {}
 
 uint32_t CACHE::prefetcher_cache_operate(uint64_t addr, uint64_t ip, uint8_t cache_hit, uint8_t type, uint32_t metadata_in)
 {
-
   uint64_t cl_addr = addr >> LOG2_BLOCK_SIZE;
+  // printf("%u\n", cl_addr);
+  if (!cache_hit) {
 
-  int state = ALLOCATED;
-  int direction = 0;
+    int state = ALLOCATED;
+    int direction = 0;
 
-  // get boundaries of tracking set
-  auto set_begin = std::begin(trackers[this]);
-  auto set_end = std::next(set_begin, TRACKER_SETS);
+    // get boundaries of tracking set
+    auto set_begin = std::begin(trackers[this]);
+    auto set_end = std::next(set_begin, TRACKER_SETS);
 
-  // find the current ip within the set
-  auto found = std::find_if(set_begin, set_end, [ip](tracker_entry x) { return x.ip == ip; });
+    // find the current ip within the set
+    auto found = std::find_if(set_begin, set_end, [ip](tracker_entry x) { return x.ip == ip; });
 
-  if (found != set_end) // entry exists
-  {
-    if (cl_addr > found->last_cl_addr) // computing direction
+    if (found != set_end) // entry exists
     {
-      direction = 1;
-    } else {
-      direction = -1;
-    }
-
-    if (found->state == ALLOCATED) {
-      state = TRAINING;
-    } else if (found->state == TRAINING) {
-      state = TRAINING;
-      if (found->direction == direction) {
-        // here we have estimated the direction correctly, hence we can issue prefetch request
-        lookahead[this] = {cl_addr + PREFETCH_DISTANCE, PREFETCH_DEGREE, direction};
+      if (cl_addr > found->last_cl_addr) // computing direction
+      {
+        direction = 1;
+      } else {
+        direction = -1;
       }
+
+      if (found->state == ALLOCATED) {
+        state = TRAINING;
+      } else if (found->state == TRAINING) {
+        state = TRAINING;
+        if (found->direction == direction) {
+          // here we have estimated the direction correctly, hence we can issue prefetch request
+          lookahead[this] = {(cl_addr + PREFETCH_DISTANCE) << LOG2_BLOCK_SIZE, PREFETCH_DEGREE, direction};
+        }
+      }
+    } else { // entry does not exists
+      found = std::min_element(set_begin, set_end, [](tracker_entry x, tracker_entry y) { return x.last_used_cycle < y.last_used_cycle; });
     }
-  } else { // entry does not exists
-    found = std::min_element(set_begin, set_end, [](tracker_entry x, tracker_entry y) { return x.last_used_cycle < y.last_used_cycle; });
+
+    *found = {ip, state, cl_addr, direction, current_cycle};
   }
-
-  *found = {ip, state, cl_addr, direction, current_cycle};
-
   return metadata_in;
 }
 
@@ -90,8 +90,10 @@ void CACHE::prefetcher_cycle_operate()
       // check the MSHR occupancy to decide if we're going to prefetch to this
       // level or not
       bool success = prefetch_line(0, 0, pf_address, (get_occupancy(0, pf_address) < get_size(0, pf_address) / 2), 0);
-      if (success)
+      if (success) {
         lookahead[this] = {pf_address, degree - 1, direction};
+        // printf("prefetched %u old pf adddress = %u\n", pf_address >> LOG2_BLOCK_SIZE, old_pf_address >> LOG2_BLOCK_SIZE);
+      }
       // If we fail, try again next cycle
     } else {
       lookahead[this] = {};
