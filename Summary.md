@@ -68,4 +68,25 @@ Here's the comparison of throttling based prefetcher with the normal prefethers 
 ## Bonus Task
 This implements the mix of IP stride and Stream prefetcher. We have used the stream prefetcher here with a modification to detect strides. The strdies are prefetched such that they align with the pattern that is observed in the monitered region.
 
-Here are the speedup observations:
+## Stream Stride
+
+#1. Speedup
+
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142026329/a57904a3-6ebe-448c-911e-a44c325b3533">
+
+#2. L1D MPKI
+
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142026329/212f9860-7f7e-49fc-b786-9f70529a0fd8">
+
+#3. L2C MPKI
+
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142026329/bd6b41cf-9424-4069-85e2-8be85492d7e0">
+
+#4. Prefetch Accuracy
+
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142026329/74c50d3f-c4ef-45d8-a189-9c59b1638356">
+
+
+
+
+
