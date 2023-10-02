@@ -2,8 +2,8 @@
 We found the code given as a part of the problem statement to be slightly incorrect. We have made a minor modification to the code and were able to achieve higher speedups. The function `prefetch_line` expects the base address of a cache block i.e. the bits `[0:5]` to be set to 0.
 
 Here is the plot for all the traces:
+![image](https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/48720143/078143f5-0222-4670-9339-3fdfaf324934)
 
-<--link to the plot-->
 
 
 ## Task 2: Stream Prefetching
