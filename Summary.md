@@ -3,8 +3,24 @@ We found the code given as a part of the problem statement to be slightly incorr
 
 Here is the plot for all the traces:
 
-<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/48720143/078143f5-0222-4670-9339-3fdfaf324934">
+Speed Up Plot
 
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/41dc6baf-cfb8-4580-b7da-77c4231fef64">
+
+  
+L1D MPKI Plot
+
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/ae7271e8-d605-4eec-81dd-3863c7d1a9bd">
+
+
+L2C MPKI Plot
+
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/b9a63f84-a28b-4db7-9f6a-18836452fec4">
+
+
+Prefetch Accuracy Plot
+
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/f1205199-c49f-4b53-aa52-889d139ed587">
 
 
 ## Task 2: Stream Prefetching
@@ -44,6 +60,9 @@ For IP stride:
 
 Hence we adjust the aggressiveness of the prefetcher based on the prefetch accuracy!
 Here's the comparison of throttling based prefetcher with the normal prefethers of respective kinds:
+
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/211f4e9c-2ff3-4f8c-916e-5a25a32d89a5">
+
 
 
 ## Bonus Task
