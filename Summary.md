@@ -34,8 +34,7 @@ Here is the plot for all traces:
 
 #1 Speedup
 
-<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/48720143/92f0bf86-6491-4aad-9c0a-1dd88df66699">
-
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/48720143/467d2fb9-589d-4edd-8004-c2db711a691c">
 
 #2 L1D MKPI
 
