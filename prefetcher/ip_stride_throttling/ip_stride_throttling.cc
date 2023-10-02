@@ -75,8 +75,8 @@ uint32_t CACHE::prefetcher_cache_operate(uint64_t addr, uint64_t ip, uint8_t cac
 {
   uint64_t cl_addr = addr >> LOG2_BLOCK_SIZE;
   // printf("%u\n", cl_addr);
-  if(!cache_hit)
-  {int64_t stride = 0;
+  
+  int64_t stride = 0;
 
   // get boundaries of tracking set
   auto set_begin = std::next(std::begin(trackers[this]), (ip % TRACKER_SETS)*TRACKER_WAYS);
@@ -102,8 +102,9 @@ uint32_t CACHE::prefetcher_cache_operate(uint64_t addr, uint64_t ip, uint8_t cac
 
   // update tracking set
   *found = {ip, cl_addr, stride, current_cycle};
+  if(!cache_hit)
   update_aggressiveness(pf_useful, pf_issued);
-  }
+  
   return metadata_in;
 }
 
