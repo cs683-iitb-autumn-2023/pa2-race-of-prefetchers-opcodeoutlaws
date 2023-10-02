@@ -5,18 +5,15 @@ Here is the plot for all the traces:
 
 Speed Up Plot
 
-<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/41dc6baf-cfb8-4580-b7da-77c4231fef64">
-
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/12698f11-ef30-4590-9c76-2ac0c32a29bd">
   
 L1D MPKI Plot
 
 <img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/ae7271e8-d605-4eec-81dd-3863c7d1a9bd">
 
-
 L2C MPKI Plot
 
 <img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/b9a63f84-a28b-4db7-9f6a-18836452fec4">
-
 
 Prefetch Accuracy Plot
 
@@ -32,23 +29,23 @@ Quick observations:
 
 Here is the plot for all traces:
 
-#1 Speedup
 
-<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/48720143/467d2fb9-589d-4edd-8004-c2db711a691c">
+Speed Up Plot
 
-#2 L1D MKPI
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/408d8991-b149-4603-9df0-a80b49937bab">
+
+
+L1D MKPI Plot
 
 <img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/48720143/3f2a79a3-c9cb-40af-93c3-06f532d1dda4">
 
-#3 L2C MKPI
+L2C MKPI Plot
 
 <img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/48720143/7dd69571-5c4a-4b8d-824e-be647713bf10">
 
-#4 Prefetch Accuracy
+Prefetch Accuracy Plot
 
 <img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/48720143/1a497965-dd07-4c25-bf96-3f945f3eef5a">
-
-
 
 
 
@@ -90,21 +87,22 @@ This implements the mix of IP stride and Stream prefetcher. We have used the str
 
 ## Stream Stride
 
-#1. Speedup
+Speed Up Plot
+ 
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/0f280536-657f-471d-b501-0c8423aed025">
 
-<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142026329/a57904a3-6ebe-448c-911e-a44c325b3533">
+L1D MPKI Plot
 
-#2. L1D MPKI
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/48720143/3f2a79a3-c9cb-40af-93c3-06f532d1dda4">
 
-<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142026329/212f9860-7f7e-49fc-b786-9f70529a0fd8">
+L2C MPKI Plot
 
-#3. L2C MPKI
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/d3e69000-fd97-4e23-a82e-08676dff15eb">
 
-<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142026329/bd6b41cf-9424-4069-85e2-8be85492d7e0">
+Prefetch Accuracy Plot
 
-#4. Prefetch Accuracy
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/227bb00b-f2d2-49d7-a3be-ce9ef04feb61">
 
-<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142026329/74c50d3f-c4ef-45d8-a189-9c59b1638356">
 
 
 
