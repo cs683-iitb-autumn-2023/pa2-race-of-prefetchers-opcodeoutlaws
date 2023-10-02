@@ -61,6 +61,9 @@ For IP stride:
 Hence we adjust the aggressiveness of the prefetcher based on the prefetch accuracy!
 Here's the comparison of throttling based prefetcher with the normal prefethers of respective kinds:
 
+<img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/211f4e9c-2ff3-4f8c-916e-5a25a32d89a5">
+
+
 
 ## Bonus Task
 This implements the mix of IP stride and Stream prefetcher. We have used the stream prefetcher here with a modification to detect strides. The strdies are prefetched such that they align with the pattern that is observed in the monitered region.
