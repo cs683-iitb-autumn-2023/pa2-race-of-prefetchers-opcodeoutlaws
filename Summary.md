@@ -29,9 +29,11 @@ Quick observations:
 
 Here is the plot for all traces:
 
+
 Speed Up Plot
 
 <img width="500" alt="image" src="https://github.com/cs683-iitb-autumn-2023/pa2-race-of-prefetchers-opcodeoutlaws/assets/142027995/408d8991-b149-4603-9df0-a80b49937bab">
+
 
 L1D MKPI Plot
 
