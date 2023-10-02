@@ -68,7 +68,7 @@ uint32_t CACHE::prefetcher_cache_operate(uint64_t addr, uint64_t ip, uint8_t cac
   if (!cache_hit) {
 
     short int state;
-    short int direction = 0;
+    short int direction = -1;
 
     // get boundaries of tracking set
     auto set_begin = std::begin(trackers[this]);

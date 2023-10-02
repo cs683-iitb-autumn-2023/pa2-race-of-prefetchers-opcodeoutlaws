@@ -8,8 +8,7 @@ constexpr int PREFETCH_DEGREE = 2;
 constexpr int PREFETCH_DISTANCE = 16;
 const int INITIAL_DISTANCE = 12;
 
-constexpr std::size_t TRACKER_SETS = 256;
-constexpr std::size_t TRACKER_WAYS = 4;
+constexpr std::size_t TRACKER_SETS = 64;
 
 const int INITIAL = 0;
 const int ALLOCATED = 1;
@@ -35,7 +34,7 @@ struct lookahead_entry {
 };
 
 std::map<CACHE*, lookahead_entry> lookahead;
-std::map<CACHE*, std::array<tracker_entry, TRACKER_SETS * TRACKER_WAYS>> trackers;
+std::map<CACHE*, std::array<tracker_entry, TRACKER_SETS>> trackers;
 
 void CACHE::prefetcher_initialize() { std::cout << "Stream Plus Stride Prefetcher with degree = " << PREFETCH_DEGREE << " and distance = " << PREFETCH_DISTANCE << endl; }
 
