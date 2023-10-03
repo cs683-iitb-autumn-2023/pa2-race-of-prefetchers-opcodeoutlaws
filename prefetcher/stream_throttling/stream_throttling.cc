@@ -8,7 +8,7 @@ int PREFETCH_DEGREE = 2;
 int PREFETCH_DISTANCE = 16;
 int INITIAL_DISTANCE = 12;
 
-int PREFETCH_LEVELS[5][2] = {{1,4}, {1,8}, {2,16}, {4,34}, {4,64}};
+int PREFETCH_LEVELS[5][2] = {{1,4}, {1,8}, {2,16}, {4,16}, {4,64}};
 int CURRENT_PREFETCH_LEVEL = 2;
 
 constexpr std::size_t TRACKER_SETS = 64;
@@ -69,7 +69,7 @@ void CACHE::prefetcher_cycle_operate()
 
     // If the next step would exceed the degree or run off the page, stop
     if (virtual_prefetch || (pf_address >> LOG2_PAGE_SIZE) == (old_pf_address >> LOG2_PAGE_SIZE)) {
-      // check the MSHR occupancy to decide if we're going to prefetch to this
+      // check the MSHR occupancy to decide if we're goinhttp://hps.ece.utexas.edu/pub/srinath_hpca07.pdfg to prefetch to this
       // level or not
       bool success = prefetch_line(0, 0, pf_address, (get_occupancy(0, pf_address) < get_size(0, pf_address) / 2), 0);
       if (success) {
