@@ -1,5 +1,5 @@
 ## Task 1: IP Stride Prefetching
-We found the code given as a part of the problem statement to be slightly incorrect. We have made a minor modification to the code and were able to achieve higher speedups. The function `prefetch_line` expects the base address of a cache block i.e. the bits `[0:5]` to be set to 0.
+We found the code given as a part of the problem statement to be slightly incorrect. We have made a minor modification to the code and were able to achieve higher speedups. The function `prefetch_line` expects the base address of a cache block i.e. the bits `[0:5]` to be set to 0. We got this information by reading this: https://github.com/0xd3ba/build-your-own-prefetcher/tree/main/1_prefetching_api
 
 Here is the plot for all the traces:
 
