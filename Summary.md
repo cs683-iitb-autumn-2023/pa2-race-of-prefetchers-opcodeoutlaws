@@ -23,9 +23,8 @@ Prefetch Accuracy Plot
 ## Task 2: Stream Prefetching
 We implemented the approach suggested in the linked research paper http://hps.ece.utexas.edu/pub/srinath_hpca07.pdf to implement this.
 
-Quick observations:
-- Some trace are favorable for a stream prefetcher.
-- If the aggressiveness is increased too much, we start noticing decrease in IPC.
+Note:
+- The stream prefetcher implemented for the below observations is in accordance to the above linked research paper. Implementing a simpler prefetcher with just three states and without the condition of monitering region yeilds us a better performance with approximately 20% jump for some of the traces especially gcc trace.
 
 Here is the plot for all traces:
 
